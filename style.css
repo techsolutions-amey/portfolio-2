@@ -86,8 +86,8 @@ body {
 }
 
 .profile-pic img {
-    max-width: 100%;
-    height: auto;
+    max-width: 50%;
+    height: 50%;
     border-radius: 50%;
     border: 5px solid #00ffff;
     filter: brightness(120%);
@@ -156,23 +156,36 @@ body {
     background-color: rgba(0, 0, 0, 0.7);
     padding: 50px 0;
     text-align: center;
+    
 }
 
 .projects-container {
+    
+    
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    gap: 20px;
+    gap: 30px;
     margin-top: 20px;
 }
 
+.project img {
+    max-width: 50%;
+    height: 50%;
+    border-radius: 50%;
+    border: 5px solid #00ffff;
+    filter: brightness(120%);
+    
+}
+
 .project {
-    flex: calc(50% - 20px);
+    flex: calc(50% - 30px);
     background-color: rgba(255, 255, 255, 0.9);
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
     transition: transform 0.5s;
+    
 }
 
 @media screen and (min-width: 768px) {
