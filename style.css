@@ -90,7 +90,7 @@ body {
     height: 50%;
     border-radius: 50%;
     border: 5px solid #00ffff;
-    filter: brightness(120%);
+    filter: brightness(100%);
 }
 
 .hero-text {
@@ -161,12 +161,16 @@ body {
 
 .projects-container {
     
-    
+    height: 70%;
+    width: 70%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     gap: 30px;
     margin-top: 20px;
+    justify-items: center;
+    margin-left : 15%;
+    
 }
 
 .project img {
@@ -233,8 +237,8 @@ body {
 }
 
 .contact-list img {
-    width: 30px;
-    height: 30px;
+    width: 60px;
+    height: 60px;
     border-radius: 10%;
     border: 2px solid #00ffff;
     padding: 5px;
