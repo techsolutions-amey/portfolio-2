@@ -22,53 +22,105 @@ body {
     padding: 20px;
 }
 
-header {
+/* navigation bar*/
+
+nav{
     position: fixed;
-    padding: 20px 0;
-    top: 0;
-    left: 0;
-    right: 0;
-    background-color: rgba(127, 127, 127, 0.7);
-    z-index: 1000;
-    justify-content: space-between;
+    width: 100%;
+    height: 80px;
+    background-color: rgb(0, 0, 0);
+    opacity: 80%;
+    z-index: 100;
+    
 }
 
-.header-left {
-    position: absolute;
-    top: 0;
-    left: 0;
-    margin: 20px;
+label.logo{
+    font-size: 30px;
+    color: #ffffff;
+    margin: 0 100px;
+    line-height: 80px;
 }
 
-body {
-    padding-top: 80px;
-}
-
-.navbar {
-    text-align: right;
-}
-
-.navbar ul {
+nav ul{
+    float:right;
     list-style-type: none;
 }
 
-.navbar li {
-    display: inline;
-    margin-right: 20px;
+nav ul li{
+    display : inline-block;
+    line-height: 80px;
+
 }
 
-.navbar a {
+nav ul li a{
     text-decoration: none;
+    color: #ffffff;
+    font-size: 18px;
+    text-transform: capitalize;
+    padding: 8px 20px ;
+}
+
+nav ul li a.active,a:hover{
+    background:rgb(78, 0, 180);
+    border-radius: 10px;
+    color: black;
+}
+
+#checkbtn{
+    float: right;
+    line-height: 80px;
+    margin-right: 10px;
+    font-size: 30px;
     color: #fff;
-    font-weight: bold;
-    font-size: 14px;
-    transition: color 0.3s;
+    display: none;
+}
+#check{
+    display: none;
 }
 
-.navbar a:hover {
-    color: #00ffff;
+#check:checked ~ ul{
+    left: 0;
+    
 }
 
+@media(max-width:848px){
+  
+    label.logo{
+        font-size: 28px;
+        margin: 0 30px;
+    }
+
+    #checkbtn{
+    display: block;
+   }
+
+   nav ul{
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    position: fixed;
+    top: 80px;
+    left: -100%;
+    transition: 0.5s;
+    z-index: 100;
+   }
+
+   nav ul li{
+    display: block;
+    text-align: center;
+    line-height: 40px;
+    margin: 10px;
+   }
+}
+
+@media(max-width:298px){
+    label.logo{
+        font-size: 18px;
+        margin: 0 10px;
+    }
+}
+
+  
 /* Hero section styles */
 #hero {
     background-color: rgba(0, 0, 0, 0.5);
@@ -81,8 +133,8 @@ body {
 }
 
 .profile-pic {
+    margin-top: 80px;
     text-align: center;
-    margin: 20px 0;
 }
 
 .profile-pic img {
@@ -136,25 +188,32 @@ body {
 /* About section styles */
 #about {
     background-color: rgba(0, 0, 0, 0.7);
-    padding: 50px 0;
+    padding: 70px 0;
     text-align: center;
 }
 
 #about h2 {
+    padding: 40px;
     font-size: 24px;
     color: #fff;
+}
+#about h3{
+    text-align: center;
 }
 
 #about p {
     font-size: 16px;
     color: #ddd;
     line-height: 1.5;
+    text-align: justify;
+    margin-left: 50px;
+    margin-right: 50px;
 }
 
 /* Projects section styles */
 #projects {
     background-color: rgba(0, 0, 0, 0.7);
-    padding: 50px 0;
+    padding: 80px 0;
     text-align: center;
     
 }
@@ -193,6 +252,7 @@ body {
 }
 
 @media screen and (min-width: 768px) {
+    
     .project {
         flex: calc(33.33% - 20px);
     }
@@ -204,6 +264,7 @@ body {
 
 .project img {
     max-width: 100%;
+    max-height: 100%;
     border-radius: 10px;
 }
 
@@ -219,6 +280,80 @@ body {
     line-height: 1.5;
 }
 
+/*contact form style*/
+.contact-form {
+    background-color: #ffffff;
+    padding: 40px;
+    text-align: center;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 3%;
+    border-radius: 2%;
+
+}
+
+.contact-form h2 {
+    font-size: 28px;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 18px;
+    color: #000000;
+    margin-bottom: 5px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-bottom: 2px solid #000000;
+    background-color: transparent;
+    color: #000000;
+    font-size: 16px;
+    transition: border-bottom 0.3s;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group input[type="tel"]:focus,
+.form-group textarea:focus {
+    border-bottom: 2px solid #0099cc;
+    outline: none;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.form-group button[type="submit"] {
+    background-color: #00ffff;
+    color: #000;
+    border-color: #000;
+    border-width: 3px;
+    padding: 12px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.form-group button[type="submit"]:hover {
+    background-color: #0099cc;
+}
+
+
+
 /* Contact section styles */
 #contact {
     background-color: rgba(0, 0, 0, 0.7);
@@ -228,7 +363,7 @@ body {
 
 .contact-list {
     list-style: none;
-    padding: 0;
+    padding: 40px;
 }
 
 .contact-list li {
@@ -247,11 +382,41 @@ body {
 
 .contact-list a {
     text-decoration: none;
+    color: #fff;
 }
 
 .contact-list img:hover {
-    transform: scale(1.2);
+    transform: scale(1.3);
+    transition: 0.5s;
 }
+
+@media(max-width:416px){
+    
+.contact-list li {
+    margin: 5px;
+}
+
+.contact-list img {
+    width: 50px;
+    height: 50px;
+}
+
+}
+
+
+@media(max-width:334px){
+    
+    .contact-list li {
+        margin: 2.5px;
+    }
+    
+    .contact-list img {
+        width: 40px;
+        height: 40px;
+    }
+    
+    }
+
 
 /* Footer styles */
 footer {
@@ -264,3 +429,28 @@ footer {
 footer p {
     font-size: 14px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
